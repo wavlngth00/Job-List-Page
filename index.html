@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiring Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">Job List</h1>
+        <div class="user-avatar">
+          <img src="img/img2.jpg" alt="User avatar" />
+        </div>
+      </div>
+    </header>
+
+    <section class="search-container">
+      <div class="left-section">
+        <div class="search">
+          <input type="text" placeholder="Search by job details" />
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <section class="job-list hidden" id="jobList"></section>
+      </div>
+      <div class="floating-cta">
+        <h3>Recruit the best candidates</h3>
+        <p>Create jobs, invite, and hire with ease</p>
+        <button class="btn-small">Create a new job</button>
+      </div>
+    </section>
+
+    <main class="main-content">
+      <section class="empty-state" id="emptyState">
+        <img src="img/img1.png" alt="Empty illustration" />
+        <h2>No job openings available</h2>
+        <p>Create a job opening now and start the candidate process.</p>
+        <button class="btn-create">Create a new job</button>
+      </section>
+    </main>
+
+    <script src="js/main.js" defer></script>
+
+    <div class="modal" id="jobModal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Job Opening</h2>
+        <form class="job-form">
+          <label>Job Name<span class="required">*</span></label>
+          <input type="text" placeholder="Ex. Front End Engineer" required />
+          <label>Job Type<span class="required">*</span></label>
+          <select required>
+            <option value="">Select job type</option>
+            <option>Full-time</option>
+            <option>Contract</option>
+            <option>Part-time</option>
+            <option>Internship</option>
+            <option>Freelance</option>
+          </select>
+          <label>Job Description<span class="required">*</span></label>
+          <textarea placeholder="Ex." required></textarea>
+          <label
+            >Number of Candidates Needed<span class="required">*</span></label
+          >
+          <input type="number" placeholder="Ex. 2" required />
+          <label>Job Salary</label>
+          <div class="salary-group">
+            <input type="text" placeholder="Rp 7.000.000" /> <span>—</span>
+            <input type="text" placeholder="Rp 8.000.000" />
+          </div>
+          <div class="profile-section">
+            <h4>Minimum Profile Information Required</h4>
+            <div class="profile-list">
+              <div class="profile-item">
+                <span>Full name</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+              <div class="profile-item">
+                <span>Photo Profile</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+              <div class="profile-item">
+                <span>Gender</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+              <div class="profile-item">
+                <span>Domicile</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+              <div class="profile-item">
+                <span>Email</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+              <div class="profile-item">
+                <span>Phone number</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+              <div class="profile-item">
+                <span>LinkedIn link</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+              <div class="profile-item">
+                <span>Date of birth</span>
+                <div class="option-buttons">
+                  <button type="button" class="active">Mandatory</button>
+                  <button type="button">Optional</button>
+                  <button type="button">Off</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="publish-btn">Publish Job</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="manageModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeManage">&times;</span>
+        <h2>Manage Job</h2>
+        <div class="manage-details">
+          <p><strong>Job Name:</strong> <span id="manageJobName"></span></p>
+          <p>
+            <strong>Salary Range:</strong> <span id="manageJobSalary"></span>
+          </p>
+          <p><strong>Created:</strong> <span id="manageJobDate"></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
